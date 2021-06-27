@@ -1,0 +1,65 @@
+[
+    {"success": "Success"},
+    {"err001": "Oops sorry, something went wrong!"},
+
+    {"tst001": "Invalid Test ID."},
+    {"tst002": "Required Test Name."},
+    {"tst003": "Success Delete Test ID: %s."},
+
+    {"dbins001": "Insert Query Error! Data should be an object."},
+    {"dbins002": "Insert Query Error! Please provide data."},
+
+    {"dbupd001": "Update Query Error! Data should be an object."},
+    {"dbupd002": "Update Query Error! Please provide where condition."},
+    {"dbupd003": "Update Query Error! Please provide cond & bind."},
+    {"dbupd004": "Update Query Error! Please provide where condition."},
+    {"dbupd005": "Update Query Error! Please provide data."},
+
+    {"dbdel001": "Delete Query Error! Please provide where condition."},
+    {"dbdel002": "Delete Query Error! Please provide cond & bind."},
+    {"dbdel003": "Delete Query Error! Please provide where condition."},
+
+    {"pstd001": "Kode Program Studi dibutuhkan."},
+    {"pstd002": "Nama Program Studi dibutuhkan."},
+    {"pstd003": "Nama Program Studi sudah terdaftar."},
+    {"pstd004": "ID Program Studi dibutuhkan."},
+    {"pstd005": "Program Studi tidak ditemukan."},
+    {"pstd006": "Kode Program Studi sudah terdaftar."},
+    {"pstd007": "Kode Program Studi tidak terdaftar."},
+    {"pstd008": "Tidak valid, parameter pencarian data hanya memperbolehkan id, kodeProgramStudi, nama, CreatedDate."},
+    {"pstd009": "Tidak valid, parameter pengurutan data hanya memperbolehkan id, kodeProgramStudi, nama, CreatedDate."},
+
+    {"mhsw001": "Nama dibutuhkan."},
+    {"mhsw002": "Nim dibutuhkan."},
+    {"mhsw003": "Tempat Lahir dibutuhkan."},
+    {"mhsw004": "Tanggal Lahir dibutuhkan."},
+    {"mhsw005": "Tahun Masuk dibutuhkan."},
+    {"mhsw006": "Format Tanggal Lahir tidak valid."},
+    {"mhsw007": "Format Tahun Masuk tidak valid."},
+    {"mhsw008": "Nim sudah terdaftar."},
+    {"mhsw009": "ID Mahasiswa dibutuhkan."},
+    {"mhsw010": "Data Mahasiswa tidak ditemukan."},
+    {"mhsw011": "Tidak valid, parameter pencarian data hanya memperbolehkan id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate."},
+    {"mhsw012": "Tidak valid, parameter pengurutan data hanya memperbolehkan id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate."},
+    
+    {"mtkl001": "Kode Mata Kuliah dibutuhkan."},
+    {"mtkl002": "Kode Mata Kuliah sudah terdaftar."},
+    {"mtkl003": "Nama Mata Kuliah dibutuhkan."},
+    {"mtkl004": "Jumlah SKS dibutuhkan."},
+    {"mtkl005": "ID Mata Kuliah dibutuhkan."},
+    {"mtkl006": "Mata Kuliah tidak ditemukan."},
+    {"mtkl007": "Tidak valid, parameter pencarian data hanya memperbolehkan id, kodeMataKuliah, namaMataKuliah, kodeProgramStudi, namaProgramStudi, CreatedDate."},
+    {"mtkl008": "Tidak valid, parameter pengurutan data hanya memperbolehkan id, kodeMataKuliah, namaMataKuliah, kodeProgramStudi, namaProgramStudi, CreatedDate."},
+
+    {"krs001": "Nim dibutuhkan."},
+    {"krs002": "Kode Mata Kuliah dibutuhkan."},
+    {"krs003": "Data Nim tidak ditemukan."},
+    {"krs004": "Data Kode Mata Kuliah tidak ditemukan."},
+    {"krs005": "KRS sudah terdaftar."},
+    {"krs006": "Tidak bisa mendaftarkan KRS karena program studi Mahasiswa dan Mata Kuliah tidak sama."},
+    {"krs007": "ID KRS dibutuhkan."},
+    {"krs008": "Data KRS tidak ditemukan."},
+    {"krs009": "Tidak valid, parameter pencarian data hanya memperbolehkan id, nim, namaMahasiswa, tahunMasuk, kodeProgramStudi, namaProgramStudi, kodeMataKuliah, namaMataKuliah, CreatedDate."},
+    {"krs010": "Tidak valid, parameter pengurutan data hanya memperbolehkan id, nim, namaMahasiswa, tahunMasuk, kodeProgramStudi, namaProgramStudi, kodeMataKuliah, namaMataKuliah, CreatedDate."}
+    
+]

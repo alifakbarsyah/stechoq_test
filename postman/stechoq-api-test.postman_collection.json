@@ -1,0 +1,843 @@
+{
+	"info": {
+		"_postman_id": "d79d262c-d261-4afa-a1de-d2304b61bfb1",
+		"name": "stechoq-api-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Program Studi",
+			"item": [
+				{
+					"name": "Edit Program Studi",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama_program_studi\": \"Sejarah indonesia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/program-studi/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"program-studi",
+								"1"
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Program Studi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kode_program_studi\": \"kps003\",\n    \"nama_program_studi\": \"IPA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/program-studi/",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"program-studi",
+								""
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Studi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/program-studi/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"program-studi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Studi Paging",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/program-studi/?pageNo=1&pageSize=10",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"program-studi",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "kps002",
+									"disabled": true
+								},
+								{
+									"key": "searchBy",
+									"value": "kodeProgramStudi",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id",
+									"disabled": true
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "{\"GenericDescription\":\"alif\"}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program Studi",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/program-studi/3",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"program-studi",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mahasiswa",
+			"item": [
+				{
+					"name": "Edit Mahasiswa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"lele\",\n    \"tempat_lahir\": \"Jakarta\",\n    \"tanggal_lahir\": \"1999-10-28\",\n    \"tahun_masuk\": \"2017\",\n    \"kode_program_studi\": \"kps002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"1"
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Mahasiswa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nim\": \"mhs0002\",\n    \"nama\": \"Lala\",\n    \"tempat_lahir\": \"Jakarta\",\n    \"tanggal_lahir\": \"1999-10-18\",\n    \"tahun_masuk\": \"2017\",\n    \"kode_program_studi\": \"kps002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								""
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mahasiswa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get mahasiswa paging",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/?sortBy=id&sortDirection=desc&pageNo=1&pageSize=10",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "01",
+									"disabled": true
+								},
+								{
+									"key": "searchBy",
+									"value": "nim",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "{\"GenericDescription\":\"alif\"}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get mahasiswa paging Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/jumlah-sks/?sortBy=id&sortDirection=desc&pageNo=1&pageSize=10",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"jumlah-sks",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "01",
+									"disabled": true
+								},
+								{
+									"key": "searchBy",
+									"value": "nim",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "{\"GenericDescription\":\"alif\"}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mahasiswa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/2",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mata Kuliah",
+			"item": [
+				{
+					"name": "Edit Mata Kuliah",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"pendidikan agama islam\",\n    \"sks\": \"5\",\n    \"kode_program_studi\": \"kps002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mata-kuliah/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"1"
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Mata Kuliah",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kode_mata_kuliah\": \"mtkl004\",\n    \"nama\": \"Sejarah sunda\",\n    \"sks\": \"5\",\n    \"kode_program_studi\": \"kps001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mata-kuliah/",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mata-kuliah",
+								""
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mata Kuliah",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mata-kuliah/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mata Kuliah  paging",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mata-kuliah/?sortBy=id&sortDirection=Asc&pageNo=1&pageSize=10",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mata-kuliah",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "lam",
+									"disabled": true
+								},
+								{
+									"key": "searchBy",
+									"value": "namaMataKuliah",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "Asc"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "{\"GenericDescription\":\"alif\"}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mata Kuliah",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/2",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Krs",
+			"item": [
+				{
+					"name": "Edit Krs",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nim\": \"mhs0002\",\n    \"kode_mata_kuliah\": \"mtkl00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/krs/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"krs",
+								"1"
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Krs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nim\": \"mhs0001\",\n    \"kode_mata_kuliah\": \"mtkl003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/krs/",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"krs",
+								""
+							]
+						},
+						"description": "oke"
+					},
+					"response": []
+				},
+				{
+					"name": "Get krs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/krs/1",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"krs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Krs Paging",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/krs/?sortBy=id&sortDirection=desc&pageNo=1&pageSize=10",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"krs",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "01",
+									"disabled": true
+								},
+								{
+									"key": "searchBy",
+									"value": "nim",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "sortDirection",
+									"value": "desc"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "search",
+									"value": "{\"GenericDescription\":\"alif\"}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Krs",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{proto}}://{{domain-url}}/mahasiswa/2",
+							"protocol": "{{proto}}",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"mahasiswa",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Jumlah SKS Mahasiswa Paging",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{domain-url}}/mahasiswa/jumlah-sks/?sortBy=id&sortDirection=Asc&pageNo=1&pageSize=10",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{domain-url}}"
+					],
+					"path": [
+						"mahasiswa",
+						"jumlah-sks",
+						""
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "sortDirection",
+							"value": "Asc"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "enddate",
+							"value": ":enddat",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Mata Kuliah Paging",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTk5MTE1MTM3LCJleHAiOjE2MDE3MDcxMzd9.ZSeeUWPCSphoI-8-faWpIhpIoiTnMZaErA8kUPTS2jQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{proto}}://{{domain-url}}/program-studi/list-matakuliah/?pageNo=1&pageSize=10&searchBy=kodeProgramStudi&search=kps002",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{domain-url}}"
+					],
+					"path": [
+						"program-studi",
+						"list-matakuliah",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "02",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "id",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "search",
+							"value": "{\"GenericDescription\":\"alif\"}",
+							"disabled": true
+						},
+						{
+							"key": "searchBy",
+							"value": "kodeProgramStudi"
+						},
+						{
+							"key": "search",
+							"value": "kps002"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

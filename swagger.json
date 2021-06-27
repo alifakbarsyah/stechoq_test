@@ -1,0 +1,1121 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Stechoq test API Documentation",
+    "description": "",
+    "license":{
+      "name":"Apache 2.0",
+      "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "Progam Studi",
+      "description": "API for Progam Studi"
+    },
+    {
+      "name": "Mahasiswa",
+      "description": "API for Mahasiswa"
+    },
+    {
+      "name": "Mata Kuliah",
+      "description": "API for Mata Kuliah"
+    },
+    {
+      "name": "Krs",
+      "description": "API for Krs"
+    },
+    {
+      "name": "Jumlah SKS",
+      "description": "API for Jumlah SKS"
+    },
+    {
+      "name": "List Matkul/Prodi",
+      "description": "API for List Matkul/Prodi"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/program-studi": {
+      "get": {
+        "tags": [
+          "Progam Studi"
+        ],
+        "summary": "Get paging Progam Studi",
+        "parameters":[  
+          {  
+            "name":"searchBy",
+            "in":"query",
+            "description":"Search this data (id, kodeProgramStudi, nama, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"search",
+            "in":"query",
+            "description":"Search data by value",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortBy",
+            "in":"query",
+            "description":"Sort data by ASC/DESC",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortDirection",
+            "in":"query",
+            "description":"Sort data by this (id, kodeProgramStudi, nama, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"pageNo",
+            "in":"query",
+            "description":"Page Number",
+            "required":false,
+            "type":"number"
+          },
+          {  
+            "name":"pageSize",
+            "in":"query",
+            "description":"Number of data per page",
+            "required":false,
+            "type":"number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": " A list of Progam Studi",
+            "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/definitions/progamstudi"
+                  }
+                }
+            }
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Progam Studi"
+        ],
+        "summary": "Create a new Progam Studi in system",
+        "requestBody": {
+          "description": "Create a new Progam Studi Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/progamstudi"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/program-studi/{id}": {
+      "get": {
+        "tags": [
+          "Progam Studi"
+        ],
+        "summary": "Get Progam Studi by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Progam Studi",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Progam Studi"
+        ],
+        "summary": "Change Progam Studi data",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mahasiswa",
+            "required":true,
+            "type":"integer"
+          },
+          {  
+            "name":"nama_program_studi",
+            "in":"body",
+            "description":"New nama_program_studi",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Progam Studi"
+        ],
+        "summary": "Delete Progam Studi by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Progam Studi",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/mahasiswa": {
+      "get": {
+        "tags": [
+          "Mahasiswa"
+        ],
+        "summary": "Get paging Mahasiswa",
+        "parameters":[  
+          {  
+            "name":"searchBy",
+            "in":"query",
+            "description":"Search this data (id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"search",
+            "in":"query",
+            "description":"Search data by value",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortBy",
+            "in":"query",
+            "description":"Sort data by ASC/DESC",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortDirection",
+            "in":"query",
+            "description":"Sort data by this (id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"pageNo",
+            "in":"query",
+            "description":"Page Number",
+            "required":false,
+            "type":"number"
+          },
+          {  
+            "name":"pageSize",
+            "in":"query",
+            "description":"Number of data per page",
+            "required":false,
+            "type":"number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": " A list of mahasiswa",
+            "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/definitions/mahasiswa"
+                  }
+                }
+            }
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Mahasiswa"
+        ],
+        "summary": "Create a new Mahasiswa in system",
+        "requestBody": {
+          "description": "Create a new Mahasiswa Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/mahasiswa"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/mahasiswa/{id}": {
+      "get": {
+        "tags": [
+          "Mahasiswa"
+        ],
+        "summary": "Get Mahasiswa by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mahasiswa",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Mahasiswa"
+        ],
+        "summary": "Change Mahasiswa data",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mahasiswa",
+            "required":true,
+            "type":"integer"
+          },
+          {  
+            "name":"nim",
+            "in":"body",
+            "description":"New nim",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"nama",
+            "in":"body",
+            "description":"New nama",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"tempat_lahir",
+            "in":"body",
+            "description":"New tempat_lahir",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"tanggal_lahir",
+            "in":"body",
+            "description":"New tanggal_lahir",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"tahun_masuk",
+            "in":"body",
+            "description":"New tahun_masuk",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"kode_program_studi",
+            "in":"body",
+            "description":"New kode_program_studi",
+            "required":true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Mahasiswa"
+        ],
+        "summary": "Delete Mahasiswa by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mahasiswa",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/mata-kuliah": {
+      "get": {
+        "tags": [
+          "Mata Kuliah"
+        ],
+        "summary": "Get paging Mata Kuliah",
+        "parameters":[  
+          {  
+            "name":"searchBy",
+            "in":"query",
+            "description":"Search this data (id, kodeMataKuliah, namaMataKuliah, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"search",
+            "in":"query",
+            "description":"Search data by value",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortBy",
+            "in":"query",
+            "description":"Sort data by ASC/DESC",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortDirection",
+            "in":"query",
+            "description":"Sort data by this (id, kodeMataKuliah, namaMataKuliah, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"pageNo",
+            "in":"query",
+            "description":"Page Number",
+            "required":false,
+            "type":"number"
+          },
+          {  
+            "name":"pageSize",
+            "in":"query",
+            "description":"Number of data per page",
+            "required":false,
+            "type":"number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+            "200": {
+              "description": " A list of Mata Kuliah",
+              "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/definitions/matakuliah"
+                    }
+                  }
+              }
+            },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Mata Kuliah"
+        ],
+        "summary": "Create a new Mata Kuliah in system",
+        "requestBody": {
+          "description": "Create a new Mata Kuliah Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/matakuliah"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/mata-kuliah/{id}": {
+      "get": {
+        "tags": [
+          "Mata Kuliah"
+        ],
+        "summary": "Get Mata Kuliah by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mata Kuliah",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Mata Kuliah"
+        ],
+        "summary": "Change Mata Kuliah data",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description":"ID Mata Kuliah",
+            "required":true,
+            "type":"integer"
+          },
+          {  
+            "name":"nama",
+            "in":"body",
+            "description":"New nama Mata Kuliah",
+            "required":true,
+            "type":"string"
+          },
+          {  
+            "name":"sks",
+            "in":"body",
+            "description":"New sks",
+            "required":true,
+            "type":"integer"
+          },
+          {  
+            "name":"kode_program_studi",
+            "in":"body",
+            "description":"New kode_program_studi",
+            "required":true,
+            "type":"string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Mata Kuliah"
+        ],
+        "summary": "Delete Mata Kuliah by ID",
+        "parameters":[  
+          {  
+            "name":"id",
+            "in":"path",
+            "description": "ID Mata Kuliah",
+            "required":true,
+            "type":"integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/krs": {
+      "get": {
+          "tags": [
+            "Krs"
+          ],
+          "summary": "Get paging Krs",
+          "parameters":[  
+            {  
+              "name":"searchBy",
+              "in":"query",
+              "description":"Search this data (id, nim, namaMahasiswa, tahunMasuk, kodeProgramStudi, namaProgramStudi, kodeMataKuliah, namaMataKuliah, CreatedDate)",
+              "required":false,
+              "type":"string"
+            },
+            {  
+              "name":"search",
+              "in":"query",
+              "description":"Search data by value",
+              "required":false,
+              "type":"string"
+            },
+            {  
+              "name":"sortBy",
+              "in":"query",
+              "description":"Sort data by ASC/DESC",
+              "required":false,
+              "type":"string"
+            },
+            {  
+              "name":"sortDirection",
+              "in":"query",
+              "description":"Sort data by this (id, nim, namaMahasiswa, tahunMasuk, kodeProgramStudi, namaProgramStudi, kodeMataKuliah, namaMataKuliah, CreatedDate)",
+              "required":false,
+              "type":"string"
+            },
+            {  
+              "name":"pageNo",
+              "in":"query",
+              "description":"Page Number",
+              "required":false,
+              "type":"number"
+            },
+            {  
+              "name":"pageSize",
+              "in":"query",
+              "description":"Number of data per page",
+              "required":false,
+              "type":"number"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+              "200": {
+                "description": " A list of Krs",
+                "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/definitions/krsresult"
+                      }
+                    }
+                }
+              },
+            "400": {
+              "description": "Failed. Bad post data."
+            }
+          }
+      },
+      "post": {
+          "tags": [
+            "Krs"
+          ],
+          "summary": "Create a new Krs in system",
+          "requestBody": {
+            "description": "Create a new Krs Object",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definitions/krs"
+                }
+              }
+            }
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Failed. Bad post data."
+            }
+          }
+      }
+    },
+    "/krs/{id}": {
+      "get": {
+          "tags": [
+            "Krs"
+          ],
+          "summary": "Get Krs by ID",
+          "parameters":[  
+            {  
+              "name":"id",
+              "in":"path",
+              "description":"ID Krs",
+              "required":true,
+              "type":"integer"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Failed. Bad post data."
+            }
+          }
+      },
+      "put": {
+          "tags": [
+            "Krs"
+          ],
+          "summary": "Change Krs data",
+          "parameters":[  
+            {  
+              "name":"id",
+              "in":"path",
+              "description":"ID Krs",
+              "required":true,
+              "type":"integer"
+            },
+            {  
+              "name":"nim",
+              "in":"body",
+              "description":"New nim",
+              "required":true,
+              "type":"string"
+            },
+            {  
+              "name":"kode_mata_kuliah",
+              "in":"body",
+              "description":"New kode_mata_kuliah",
+              "required":true,
+              "type":"string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Failed. Bad post data."
+            }
+          }
+      },
+      "delete": {
+          "tags": [
+            "Krs"
+          ],
+          "summary": "Delete Krs by ID",
+          "parameters":[  
+            {  
+              "name":"id",
+              "in":"path",
+              "description": "ID Krs",
+              "required":true,
+              "type":"integer"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Failed. Bad post data."
+            }
+          }
+      }
+    },
+    "/mahasiswa/jumlah-sks/": {
+      "get": {
+        "tags": [
+          "Jumlah SKS"
+        ],
+        "summary": "Get paging Jumlah SKS",
+        "parameters":[  
+          {  
+            "name":"searchBy",
+            "in":"query",
+            "description":"Search this data (id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"search",
+            "in":"query",
+            "description":"Search data by value",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortBy",
+            "in":"query",
+            "description":"Sort data by ASC/DESC",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortDirection",
+            "in":"query",
+            "description":"Sort data by this value (id, nim, nama, tempatLahir, tanggalLahir, tahunMasuk, kodeProgramStudi, namaProgramStudi, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"pageNo",
+            "in":"query",
+            "description":"Page Number",
+            "required":false,
+            "type":"number"
+          },
+          {  
+            "name":"pageSize",
+            "in":"query",
+            "description":"Number of data per page",
+            "required":false,
+            "type":"number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+            "200": {
+              "description": " A list of Jumlah Sks",
+              "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/definitions/jumlahsks"
+                    }
+                  }
+              }
+            },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/program-studi/list-matakuliah/": {
+      "get": {
+        "tags": [
+          "List Matkul/Prodi"
+        ],
+        "summary": "Get paging List Matkul/Prodi",
+        "parameters":[  
+          {  
+            "name":"searchBy",
+            "in":"query",
+            "description":"Search this data (id, kodeProgramStudi, nama, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"search",
+            "in":"query",
+            "description":"Search data by this value",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortBy",
+            "in":"query",
+            "description":"Sort data by ASC/DESC",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"sortDirection",
+            "in":"query",
+            "description":"Sort by this data (id, kodeProgramStudi, nama, CreatedDate)",
+            "required":false,
+            "type":"string"
+          },
+          {  
+            "name":"pageNo",
+            "in":"query",
+            "description":"Page Number",
+            "required":false,
+            "type":"number"
+          },
+          {  
+            "name":"pageSize",
+            "in":"query",
+            "description":"Number of data per page",
+            "required":false,
+            "type":"number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200":{
+            "description": " A list of Matkul/Prodi",
+            "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/definitions/listmatakuliah"
+                  }
+                }
+            }
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+  },
+  "definitions": {
+    "mahasiswa": {
+      "properties": {
+        "nim": {
+          "type": "string"
+        },
+        "nama": {
+            "type": "string"
+        },
+        "genericDescription": {
+          "type": "string"
+        },
+        "tempat_lahir": {
+          "type": "string"
+        },
+        "tanggal_lahir": {
+          "description":"YYYY-MM-DD",
+          "type": "string"
+        },
+        "tahun_masuk": {
+          "description":"YYYY",
+          "type": "string"
+        },
+        "kode_program_studi": {
+          "type": "string"
+        }
+      }
+    },
+    "progamstudi": {
+      "properties": {
+        "kode_program_studi": {
+          "type": "string"
+        },
+        "nama_program_studi": {
+            "type": "string"
+          }
+      }
+    },
+    "matakuliah": {
+      "properties": {
+        "kode_mata_kuliah": {
+          "type": "string"
+        },
+        "nama": {
+          "type": "string"
+        },
+        "sks": {
+          "type": "integer"
+        },
+        "kode_program_studi": {
+            "type": "string"
+        }
+      }
+    },
+    "krs": {
+      "properties": {
+        "nim": {
+          "type": "string"
+        },
+        "kode_mata_kuliah": {
+          "type": "integer"
+        }
+      }
+    },
+    "krsresult": {
+      "properties": {
+        "nim": {
+          "type": "string"
+        },
+        "namaMahasiswa": {
+          "type": "string"
+        },
+        "tahunMasuk": {
+          "type": "integer"
+        },
+        "kodeProgramStudi": {
+            "type": "string"
+        },
+        "namaProgramStudi": {
+            "type": "string"
+        },
+        "kodeMataKuliah": {
+            "type": "string"
+        },
+        "namaMataKuliah": {
+            "type": "string"
+        },
+        "sks": {
+            "type": "integer"
+        }
+      }
+    },
+    "jumlahsks": {
+      "properties": {
+        "nim": {
+            "type": "string"
+          },
+          "nama": {
+            "type": "string"
+          },
+          "tempatLahir": {
+            "type": "string"
+          },
+          "tanggalLahir": {
+              "type": "integer"
+          },
+          "tahunMasuk": {
+              "type": "integer"
+          },
+          "kodeProgramStudi": {
+              "type": "string"
+          },
+          "namaProgramStudi": {
+              "type": "string"
+          },
+          "jumlahSks": {
+              "type": "integer"
+          },
+          "mataKuliah": {
+            "type": "object"
+          }
+      }
+    },
+    "listmatakuliah": {
+        "properties": {
+            "kodeProgramStudi": {
+              "type": "string"
+            },
+            "namaProgramStudi": {
+              "type": "string"
+            },
+            "mataKuliah": {
+              "type": "object"
+            }
+        }
+      }
+    }
+}
